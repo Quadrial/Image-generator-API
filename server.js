@@ -11,6 +11,13 @@ app.use(express.json());
 
 const API_KEY = process.env.API_KEY;
 
+app.get("/", async (req, res) => {
+  res.status(200).json({
+    status: "success",
+    msg: "welcome to img generator",
+  });
+});
+
 app.post("/generate-img", async (req, res) => {
   const payload = req.body;
 
